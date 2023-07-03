@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getCharacters(page: number, pageSize: number): Observable<any> {
+  getTeams(): Observable<any> {
     return this._httpClient.get(this.baseUrl + `/search_all_teams.php?l=English%20Premier%20League`).pipe(
       map((res: any) => {
         return res;

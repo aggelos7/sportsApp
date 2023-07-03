@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,4 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent {
   title = 'sportsApp';
-
-  constructor(private apiService: ApiService) { }
-
-  ngOnInit() {
-    this.apiService.getCharacters(1, 10).subscribe((res: any) => {
-      console.log(res);
-    });
-  }
 }

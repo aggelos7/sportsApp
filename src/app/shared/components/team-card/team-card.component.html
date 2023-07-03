@@ -1,1 +1,24 @@
-<p>team-card works!</p>
+<mat-card class="max-w-sm">
+    <img [src]="team.strTeamBadge" [alt]="team.strTeamBadge" class="max-w-sm">
+    <mat-card-content>
+        <mat-card-title class="py-3">{{team.strTeam}}</mat-card-title>
+        <ul>
+            <li>
+                <span class="title">Year: </span>
+                <span class="content">{{team.intFormedYear}}</span>
+            </li>
+            <li>
+                <span class="title">Stadium: </span>
+                <span class="content">{{(team.strStadium).replace('Stadium','')}}</span>
+            </li>
+            <li>
+                <span class="title">Stadium Capacity: </span>
+                <span class="content">{{team.intStadiumCapacity}}</span>
+            </li>
+            <li>
+                <span class="title">Nickname: </span>
+                <span class="content">{{(team.strKeywords).split(',')[0]}}</span>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Team } from '../../models/team';
 
 @Component({
   selector: 'app-team-card',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./team-card.component.scss']
 })
 export class TeamCardComponent {
+  @Input() team: Team;
 
 }
