@@ -7,10 +7,16 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { TeamsComponent } from './content/teams/teams.component';
+import { SearchComponent } from './content/search/search.component';
+import { FiltersComponent } from './content/filters/filters.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeamsComponent,
+    SearchComponent,
+    FiltersComponent,
   ],
   imports: [
     BrowserModule,
