@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
     SharedModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
-      // appState: appReducer,
+      appState: appReducer,
     }),
     EffectsModule.forRoot([]),
   ],

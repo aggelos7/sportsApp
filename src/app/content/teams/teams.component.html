@@ -1,7 +1,7 @@
 <div class="p-12">
     <div class="grid gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <ng-container *ngFor="let item of teams">
-            <app-team-card [team]="item"></app-team-card>
+            <app-team-card [team]="item" (click)="goToTeamDetails(item)"></app-team-card>
         </ng-container>
     </div>
 </div>

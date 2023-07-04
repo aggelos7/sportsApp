@@ -22,4 +22,16 @@ export class ApiService {
       })
     );
   }
+
+  getTeamByName(name: string): Observable<any> {
+    return this._httpClient.get(this.baseUrl + `/searchteams.php?t=${name}`).pipe(
+      map((res: any) => {
+        return res;
+      }),
+      catchError((err: HttpErrorResponse) => {
+        console.log(err.message);
+        return of();
+      })
+    );
+  }
 }

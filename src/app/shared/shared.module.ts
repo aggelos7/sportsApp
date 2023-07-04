@@ -12,17 +12,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { TeamCardComponent } from './components/team-card/team-card.component';
-import { FiltersComponent } from '../content/filters/filters.component';
-import { SearchComponent } from '../content/search/search.component';
-import { TeamsComponent } from '../content/teams/teams.component';
-
 
 
 @NgModule({
   declarations: [
-    TeamsComponent,
-    SearchComponent,
-    FiltersComponent,
     TeamCardComponent
   ],
   imports: [
@@ -41,6 +34,7 @@ import { TeamsComponent } from '../content/teams/teams.component';
     MatCardModule
   ],
   exports: [
+    CommonModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -52,7 +46,8 @@ import { TeamsComponent } from '../content/teams/teams.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    TeamCardComponent
   ]
 })
 export class SharedModule { }
