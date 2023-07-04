@@ -23,7 +23,7 @@ export class TeamComponent {
 
   ngOnInit(): void {
 
-    // the api call 'Search for team by name' is not working as supposed to (returns only Arsenal), so I'm using the store to get the team data
+    // the api call 'Search for team by name' is not working as supposed (returns only Arsenal), so I'm using the store to get the team data
     this.store.select('appState').subscribe((res: any) => {
       this.teams = res.teams;
     });

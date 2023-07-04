@@ -12,19 +12,25 @@ import { newTeamsList } from 'src/app/store/app.actions';
 })
 export class TeamsComponent {
   teams: Team[] = [];
-  
+
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private store: Store<{appState: Team[]}>,
-    ) { }
+    private store: Store<{ appState: Team[] }>,
+  ) { }
 
   ngOnInit() {
-    this.apiService.getTeams().subscribe((res: any) => {
+    this.store.select('appState').subscribe((res: any) => {
       this.teams = res.teams;
-      console.log(this.teams);
-      this.store.dispatch(newTeamsList({teams: this.teams}));
     });
+
+    if (!this.teams.length) {
+      this.apiService.getTeams().subscribe((res: any) => {
+        this.teams = res.teams;
+        console.log(this.teams);
+        this.store.dispatch(newTeamsList({ teams: this.teams }));
+      });
+    }
   }
 
   goToTeamDetails(item: Team) {
