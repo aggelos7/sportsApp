@@ -1,1 +1,14 @@
-<p>search works!</p>
+<form class="flex flex-row gap-3" [formGroup]="form" (ngSubmit)="applyFilter()">
+
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+        <button type="button" mat-icon-button matSuffix (click)="clearForm()" [attr.aria-label]="'Clear'">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <div class="flex gap-3 ml-5 items-center mb-2">
+        <button type="button" mat-stroked-button color="link" (click)="resetFilters()">Clear Search</button>
+    </div>
+</form>

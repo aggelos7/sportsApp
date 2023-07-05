@@ -1,4 +1,5 @@
 <div class="p-12">
+    <app-search (searchQuery)="search($event)"></app-search>
     <div class="grid gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <ng-container *ngFor="let item of teams">
             <app-team-card [team]="item" (click)="goToTeamDetails(item)" class="cursor-pointer"></app-team-card>

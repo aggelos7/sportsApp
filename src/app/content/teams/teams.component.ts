@@ -38,4 +38,12 @@ export class TeamsComponent {
     this.router.navigate(['teams', item.idTeam]);
   }
 
+  search(event){
+    if(event == ''){
+      this.ngOnInit();
+    } else {
+      this.teams = this.teams.filter((item: Team) => item.strTeam.toLowerCase().includes(event.toLowerCase()));
+    }
+  }
+
 }
