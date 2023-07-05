@@ -24,6 +24,7 @@ export class SearchComponent {
 
   clearForm() {
     this.form.reset();
+    this.searchQuery.emit('');
   }
 
   resetFilters() {

@@ -1,1 +1,9 @@
-<p>filters works!</p>
+<mat-form-field>
+    <mat-label>Formed Year</mat-label>
+    <mat-select (selectionChange)="onSelectChange($event)">
+        <mat-option>-- None --</mat-option>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

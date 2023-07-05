@@ -21,9 +21,7 @@ export class TeamsComponent {
   ) { }
 
   ngOnInit() {
-    this.store.select(selectAppState).subscribe((res: any) => {
-      this.teams = res.teams;
-    });
+    this.selectStore();
 
     if (!this.teams.length) {
       this.apiService.getTeams().subscribe((res: any) => {
@@ -38,12 +36,32 @@ export class TeamsComponent {
     this.router.navigate(['teams', item.idTeam]);
   }
 
-  search(event){
-    if(event == ''){
-      this.ngOnInit();
-    } else {
+  search(event) {
+    // reset teams list (case when search2 has more values than search1)
+    this.selectStore();
+
+    if (event != '') {
       this.teams = this.teams.filter((item: Team) => item.strTeam.toLowerCase().includes(event.toLowerCase()));
     }
+  }
+
+  filter(event) {
+    if (event == 'asc') {
+      // order by intFormedYear asc
+      this.teams = [...this.teams].sort((a: Team, b: Team) => +a.intFormedYear - +b.intFormedYear);
+    } else if (event == 'desc') {
+      // order by intFormedYear desc
+      this.teams = [...this.teams].sort((a: Team, b: Team) => +b.intFormedYear - +a.intFormedYear);
+    } else {
+      // order by strTeam asc
+      this.teams = [...this.teams].sort((a: Team, b: Team) => a.strTeam.localeCompare(b.strTeam));
+    }
+  }
+
+  selectStore() {
+    this.store.select(selectAppState).subscribe((res: any) => {
+      this.teams = res.teams;
+    });
   }
 
 }

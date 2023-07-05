@@ -10,7 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 import { TeamCardComponent } from './components/team-card/team-card.component';
 
 
@@ -31,7 +32,8 @@ import { TeamCardComponent } from './components/team-card/team-card.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,
@@ -47,6 +49,7 @@ import { TeamCardComponent } from './components/team-card/team-card.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatSelectModule,
     TeamCardComponent
   ]
 })
