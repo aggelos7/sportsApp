@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { Team } from 'src/app/shared/models/team';
 import { newTeamsList } from 'src/app/store/app.actions';
+import { selectAppState } from 'src/app/store/app.selectors';
 
 @Component({
   selector: 'app-team',
@@ -24,7 +25,7 @@ export class TeamComponent {
   ngOnInit(): void {
 
     // the api call 'Search for team by name' is not working as supposed (returns only Arsenal), so I'm using the store to get the team data
-    this.store.select('appState').subscribe((res: any) => {
+    this.store.select(selectAppState).subscribe((res: any) => {
       this.teams = res.teams;
     });
 

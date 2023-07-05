@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { ApiService } from 'src/app/services/api.service';
 import { Team } from 'src/app/shared/models/team';
 import { newTeamsList } from 'src/app/store/app.actions';
+import { selectAppState } from 'src/app/store/app.selectors';
 
 @Component({
   selector: 'app-teams',
@@ -20,7 +21,7 @@ export class TeamsComponent {
   ) { }
 
   ngOnInit() {
-    this.store.select('appState').subscribe((res: any) => {
+    this.store.select(selectAppState).subscribe((res: any) => {
       this.teams = res.teams;
     });
 
