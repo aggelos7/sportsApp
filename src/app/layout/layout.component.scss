@@ -1,0 +1,9 @@
+:host{
+    .light-button{
+        @apply text-gray-100;
+    }
+
+    .dark-button{
+        @apply text-gray-900;
+    }
+}

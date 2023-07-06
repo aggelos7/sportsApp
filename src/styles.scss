@@ -9,3 +9,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 span.title {
     font-weight: 500;
 }
+
+.dark{
+    body {
+        @apply bg-gray-900;
+        @apply text-gray-100;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        @apply bg-slate-500;
+    }
+}

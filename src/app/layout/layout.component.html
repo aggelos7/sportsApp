@@ -1,4 +1,4 @@
-<div class="text-right">
-    <button *ngIf="!darkmode" mat-button (click)="setMode('dark')"><mat-icon>dark_mode</mat-icon>Darkmode</button>
-    <button *ngIf="darkmode" mat-button (click)="setMode('light')"><mat-icon>light_mode</mat-icon>Lightmode</button>
+<div class="text-right dark:bg-gray-900">
+    <button *ngIf="!darkmode" mat-button (click)="setMode('dark')" class="dark-button"><mat-icon>dark_mode</mat-icon>Darkmode</button>
+    <button *ngIf="darkmode" mat-button (click)="setMode('light')" class="light-button"><mat-icon>light_mode</mat-icon>Lightmode</button>
 </div>
